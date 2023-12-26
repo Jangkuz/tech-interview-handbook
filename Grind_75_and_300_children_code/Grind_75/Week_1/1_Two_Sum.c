@@ -5,6 +5,9 @@
 // {
 
 // }
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
    int i = 0;
    int temp = 0;
@@ -26,5 +29,17 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
        } 
     }
    } 
-   return -1;
+   return array;
+}
+int main(){
+   int arrayTest[4]={2,5,4,7};
+   int *b;
+   b = malloc(sizeof(int));
+   int *resultArray = twoSum(arrayTest, 4, 9, b);
+   int i = 0;
+   for (i = 0; i<*b;i++){
+      printf("%d\n", *(resultArray+i));
+   }
+   free(resultArray);
+   return 0;
 }
